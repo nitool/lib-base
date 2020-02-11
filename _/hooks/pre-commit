@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+container_name="pre_commit_hook"
+image_name=$(basename $(pwd))
+
+printf -- "\n\n pre commit procedure begins \n\n"
+
+docker container run \
+    -v $(pwd):/var/www/html \
+    -d --name=${container_name} ${image_name} sleep infinity
+
+docker container exec -t ${container_name} composer clear_cache
+docker container exec -t ${container_name} composer test
+
+docker container rm -f ${container_name}
+
+printf -- "\n\n pre commit procedure has ended \n\n"
+

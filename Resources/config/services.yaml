@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autoconfigure: true
+        autowire: true
+        public: false
+
+    Lib\BaseBundle\Command\:
+        resource: '../../Command/*'
+        tags: [console.command]
+

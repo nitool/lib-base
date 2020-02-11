@@ -1,0 +1,29 @@
+{
+    "name": "nitool/lib-base",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lib\\BaseBundle\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Sebastian Niecikowski",
+            "email": "snitool@wp.pl"
+        }
+    ],
+    "require": {
+        "symfony/console": "^5.0",
+        "symfony/framework-bundle": "^5.0",
+        "symfony/yaml": "^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8",
+        "symfony/phpunit-bridge": "^5.0"
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit",
+        "clear_cache": "rm -rf var/cache/*"
+    }
+}
