@@ -17,9 +17,9 @@ class LibBaseExtension extends Extension
         );
 
         $loader->load('services.yaml');
-
-        /*$configuration = new Configuration();
-        $config = $this->processConfiguration($configurations, $configs);*/
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
+        $container->setParameter('lib_base_mode', $config['mode']);
     }
 
     public function getAlias()

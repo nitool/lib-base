@@ -11,6 +11,11 @@ final class ExampleCommandTest extends AbstractCommandTest
             'example output',
             $result->getOutput()
         );
+
+        $this->assertStringContainsStringIgnoringCase(
+            'lib mode dev',
+            $result->getOutput()
+        );
     }
 }
 

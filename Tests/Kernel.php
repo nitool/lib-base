@@ -29,7 +29,7 @@ final class Kernel extends AbstractKernel
 
     public function registerContainerConfiguration(LoaderInterface $loader) 
     {
-        // todo: implement
+        $loader->load(__DIR__ . '/Resources/config.yaml');
     }
 
     public function configureContainer(
